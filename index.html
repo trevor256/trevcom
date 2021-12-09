@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <script src="https://unpkg.com/vue@next"></script>
+  <link rel="stylesheet" href="style.css">
+    <title>trevor256.com</title>
+  </head>
+  <body>
+    <div id="app">
+      {{ greeting }}
+    </div>
+
+    <script>
+      let app = Vue.createApp({
+        data: function() {
+          return {
+            greeting: 'hello Vue'
+          }
+        }
+      })
+      app.mount('#app')
+    </script>
+
+  </body>
+</html>
