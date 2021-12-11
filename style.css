@@ -4,3 +4,18 @@ body{
 #app{
   color:white;
 }
+.box {
+  background-color: white;
+  height: 200px;
+  width: 200px;
+}
+.box.two {
+  background-color: orange;
+  height: 200px;
+  width: 200px;
+}
+.box.three {
+  background-color: blue;
+  height: 200px;
+  width: 200px;
+}
