@@ -1,21 +1,159 @@
 body{
-  background-color: #222;
+  background-color: #20202f;
+  font-family: sans-serif;
+  overflow-y:hidden;
+  padding: 3%;
+  margin: 0;
+  z-index: 10;
 }
+canvas{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  animation-duration: 3s;
+  animation-name: fadein;
+  opacity: 15%;
+  z-index: -10;
+  overflow-y:hidden;
+  filter:  blur(3px);
+}
+nav{
+  width: 100%;
+  height: 50px;
+  animation-duration: 1.5s;
+  animation-name: slidein;
+}
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity:15%;
+  }
+}
+@keyframes slidein {
+  from {
+    margin-left: 50%;
+    width: 200%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+nav h1 {
+  float: left;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+  font-size: 10px;
+  color: #aaa;
+}
+nav h2{
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  padding: 0px 12px;
+  font-size: 14px;
+  color: #f75;
+}
+nav h2:hover {
+  color: #aaa;
+}
+nav h2.active {
+  color: #aaa;
+}
+
+main{
+  width: 100%;
+  height: 200px;
+  margin-right: 0%;
+  margin-top: 200px;
+  float: left;
+  border-radius: 256px;
+  text-align: center;
+  color:#fff;
+}
+
+main h1{
+  font-size: 65px;
+  text-shadow:
+  0px 5px 3px #f758,
+  0px 1px 20px #000;
+}
+
+main button{
+  width: 30%;
+  height: 60px;
+  border-radius: 256px;
+  text-align: center;
+  background-color: #f75;
+  color:#fff;
+}
+main button:hover{
+  background-color: #aaa;
+}
+main svg{
+
+}
+main p{
+
+}
+
 #app{
   color:white;
 }
-.box {
+.github {
   background-color: white;
   height: 200px;
   width: 200px;
 }
-.box.two {
+.artstaion {
   background-color: orange;
   height: 200px;
   width: 200px;
 }
-.box.three {
+.about {
   background-color: blue;
   height: 200px;
   width: 200px;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff3;
+  text-align: center;
+  padding:10px;
+}
+
+@media screen and (min-width: 600px) {
+  nav h2{
+    padding: 10px 12px;
+    font-size: 17px;
+
+  }
+  nav h1 {
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+
+}
+
+@media screen and (min-width: 1440px) {
+  nav h2{
+    padding: 10px 12px;
+    font-size: 20px;
+
+  }
+  nav h1 {
+    padding: 14px 16px;
+    font-size: 25px;
+  }
+
 }

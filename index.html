@@ -2,29 +2,40 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-  <script src="https://unpkg.com/vue@next"></script>
-  <link rel="stylesheet" href="style.css">
-    <title>trevor256.com</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Trevor Roach" name="author">
+    <script src="https://threejs.org/build/three.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="3drender.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>trevor256</title>
   </head>
   <body>
+<div id="canvas"></div>
+<nav>
+ <a href="#home"><h1>trevor256</h1></a>
+ <a href="https://github.com/trevor256" target="_blank"><h2>Github</h2></a>
+ <a href="https://www.artstation.com/trevor256" target="_blank"><h2>Artstaion</h2></a>
+ <a href="https://www.upwork.com/" target="_blank"><h2>Comisions</h2></a>
+ <a onclick="togglebox" href="#about"><h2>About</h2></a>
+</nav>
 
-    <div id="app" v-cloak>
-      {{ greeting }}
-      <input @keyup.enter="userinput(greeting + '!!!!!')" v-model="greeting" />
-      <hr/>
+    <main>
+      <h1>hello</h1>
+      <p>My Specialties</p>
+      <h2>AWS DevOps</h2>
+      <h2>Vue.js // Node.js // three.js</h2>
+      <h2>3D Modeling // 2D Graphics</h2>
+      <button><h2>Resume</h2></button>
 
-      <button @click="togglebox">Show Box or hide</button>
-      <div v-if="isVisible" class="box"></div>
-      <div v-else-if="isVisible2" class="box two"></div>
-      <div v-else class="box three"></div>
 
-    </div>
+    </main>
+
 
     <script>
       let app = Vue.createApp({
         data() {
           return {
-            greeting: 'hello',
             isVisible: false,
             isVisible2: false,
           }
@@ -38,17 +49,12 @@
 
           }
         }
-
       })
       app.mount('#app')
     </script>
 
-
-
-
-
-
-
-
+<footer>
+  <a>MIT</a> 2019<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>,Site Code.
+</footer>
   </body>
 </html>
