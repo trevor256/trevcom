@@ -1,3 +1,4 @@
+<!---->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -10,51 +11,71 @@
     <link rel="stylesheet" href="style.css">
     <title>trevor256</title>
   </head>
-  <body>
+
+<body>
+
+<!--3D background as made in 3drender.js-->
 <div id="canvas"></div>
+
+<!--navigation links-->
 <nav>
- <a href="#home"><h1>trevor256</h1></a>
+ <a href="index.html"><h1>trevor256</h1></a>
+
  <a href="https://github.com/trevor256" target="_blank"><h2>Github</h2></a>
  <a href="https://www.artstation.com/trevor256" target="_blank"><h2>Artstaion</h2></a>
  <a href="https://www.upwork.com/" target="_blank"><h2>Comisions</h2></a>
- <a onclick="togglebox" href="#about"><h2>About</h2></a>
+
 </nav>
 
-    <main>
+<!--builds main-->
+    <main id="main" v-cloak>
+
+<!--shows about main if about is active-->
+      <div v-if="about" id="about">
+        <h1>about</h1>
+        <p>this is a place holder about page</p>
+        <button @click="togglebox"><h2>Home</h2></button>
+      </div>
+
+<!--shows downloads main if nothing active
+      <div v-else-if="downloads">
+        <h1>downloads</h1>
+      </div>-->
+
+<!--shows home main if nothing active-->
+    <div v-else class="home" id="home">
       <h1>hello</h1>
       <p>My Specialties</p>
-      <h2>AWS DevOps</h2>
-      <h2>Vue.js // Node.js // three.js</h2>
-      <h2>3D Modeling // 2D Graphics</h2>
-      <button><h2>Resume</h2></button>
+      <h2>Vue.js // Node.js</h2>
+      <h2>AWS DevOps // 3D Modeling</h2>
+      <button @click="togglebox"><h2>About / Resume</h2></button>
+    </div>
 
+</main>
 
-    </main>
-
-
+<!--Vue script for updating page-->
     <script>
-      let app = Vue.createApp({
+      let main = Vue.createApp({
         data() {
           return {
-            isVisible: false,
-            isVisible2: false,
+            about: false,
+
           }
         },
         methods: {
-          togglebox(){
-            this.isVisible = !this.isVisible
-          },
-          userinput(greeting){
-              console.log(greeting)
-
+          togglebox() {
+            this.about = !this.about
           }
         }
       })
-      app.mount('#app')
+      main.mount('#main')
     </script>
 
+
+
+<!--footer information-->
 <footer>
-  <a>MIT</a> 2019<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>,Site Code.
+  &copy; 2020<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>,Trevor Roach.
 </footer>
   </body>
 </html>

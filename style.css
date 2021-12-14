@@ -4,25 +4,36 @@ body{
   overflow-x:hidden;
   padding: 3%;
   margin: 0;
-  z-index: 10;
+  z-index: 5;
 }
 canvas{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-name: fadein;
   opacity: 15%;
   z-index: -10;
   overflow-y:hidden;
-  filter:  blur(3px);
+  filter:  blur(2px);
 }
 nav{
   width: 100%;
   height: 50px;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-name: slidein;
+}
+
+#about{
+  animation-duration: 1s;
+  animation-name: fadein2;
+}
+#abut{
+  float:right;
+  width: 200px;
+  transform: translateY(-60px);
+
 }
 @keyframes fadein {
   from {
@@ -31,6 +42,15 @@ nav{
 
   to {
     opacity:15%;
+  }
+}
+@keyframes fadein2 {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity:100%;
   }
 }
 @keyframes slidein {
@@ -93,19 +113,15 @@ main button{
   text-align: center;
   background-color: #f75;
   color:#fff;
+  border-color: #aaa;
 }
 main button:hover{
   background-color: #aaa;
 }
-main svg{
 
-}
-main p{
-
-}
-
-#app{
-  color:white;
+#main{
+  animation-duration: 1.5s;
+  animation-name: slidein;
 }
 .github {
   background-color: white;
