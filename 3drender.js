@@ -36,10 +36,10 @@ function init() {
     shading: THREE.FlatShading
   });
 
-  for (var i =50; i < 100; i++) {
+  for (var i =50; i < 300; i++) {
     var mesh = new THREE.Mesh(geometry, material);
     mesh.position.set(Math.random() - 0.5,Math.random() - 0.5,  Math.random() - 0.5).normalize();
-    mesh.position.multiplyScalar(200 + (Math.random() * 300));
+    mesh.position.multiplyScalar(50 + (Math.random() * 500));
     mesh.rotation.set(Math.random() * 5, Math.random() * 5, Math.random() * 5);
     particle.add(mesh);
   }
