@@ -105,7 +105,9 @@ main button{
 main button:hover{
   background-color: #aaa;
 }
-
+svg{
+  float: left;
+}
 #main{
   animation-duration: 3s;
   animation-name: fadein2;
