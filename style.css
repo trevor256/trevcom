@@ -1,8 +1,8 @@
 body{
-  background-color: #20202a;
+  background-color: #20203a;
   font-family: sans-serif;
   overflow-x:hidden;
-  padding: 3%;
+  padding: 5%;
   margin: 0;
   z-index: 5;
 }
@@ -11,54 +11,16 @@ canvas{
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
-  opacity: 10%;
-  z-index: -10;
-  overflow-y:hidden;
-
+  opacity: 15%;
+  z-index: -5;
 }
-nav{
-  width: 100%;
-  height: 50px;
-}
-
-#about{
-  animation-duration: 1s;
-  animation-name: fadein2;
-}
-
-#abut{
-  float:right;
-  width: 200px;
-  transform: translateY(-60px);
-
-}
-@keyframes fadein {
-  from {
-    opacity: 0%;
-  }
-
-  to {
-    opacity:10%;
-  }
-}
-@keyframes fadein2 {
-  from {
-    opacity: 0%;
-  }
-
-  to {
-    opacity:100%;
-  }
-}
-
 
 nav h1 {
   float: left;
-  text-align: center;
   padding: 0px 0px;
   text-decoration: none;
-  font-size: 16px;
-  color: #aaa;
+  font-size: 13px;
+  color: #ccc;
 }
 nav h2{
   float: right;
@@ -68,11 +30,8 @@ nav h2{
   font-size: 16px;
   color: #f75;
 }
-nav h2:hover {
-  color: #aaa;
-}
-nav h2.active {
-  color: #aaa;
+nav h1:hover,nav h2:hover {
+  color: #aaf;
 }
 
 main{
@@ -94,8 +53,8 @@ main h1{
 }
 
 main button{
-  width: 35%;
-  height: 80px;
+  width: 30%;
+  height: 65px;
   border-radius: 256px;
   text-align: center;
   background-color: #f75;
@@ -103,30 +62,37 @@ main button{
   border-color: #aaa;
 }
 main button:hover{
-  background-color: #aaa;
+  background-color: #aaf;
 }
 svg{
   float: left;
 }
 #main{
   animation-duration: 3s;
-  animation-name: fadein2;
+  animation-name: fadein;
 }
-.github {
-  background-color: white;
-  height: 200px;
+
+#about{
+  animation-duration: 1s;
+  animation-name: fadein;
+}
+
+#abut{
+  float:right;
   width: 200px;
+  transform: translateY(-60px);
 }
-.artstaion {
-  background-color: orange;
-  height: 200px;
-  width: 200px;
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity:100%;
+  }
 }
-.about {
-  background-color: blue;
-  height: 200px;
-  width: 200px;
-}
+
 footer {
   position: fixed;
   left: 0;
@@ -134,30 +100,19 @@ footer {
   width: 100%;
   color: #fff3;
   text-align: center;
-  padding:10px;
+  padding:15px;
 }
 
 @media screen and (min-width: 600px) {
-  nav h2{
+  nav h1, nav h2{
     padding: 10px 12px;
     font-size: 19px;
-
   }
-  nav h1 {
-    padding: 14px 16px;
-    font-size: 19px;
-  }
-
 }
 
 @media screen and (min-width: 1440px) {
-  nav h2{
+  nav h1, nav h2{
     padding: 10px 12px;
-    font-size: 27px;
-
-  }
-  nav h1 {
-    padding: 14px 16px;
     font-size: 27px;
   }
 }

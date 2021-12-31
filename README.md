@@ -1,5 +1,6 @@
 # trevor256.com
-My personal portfolio website it uses HTML, CSS, VUE.JS, and THREE.JS
+My personal portfolio website uses HTML, CSS, VUE.JS, Nodejs and THREE.JS
 
 
-all files in the production folder are compressed, embedded, and comments removed.
+All files in the production folder are compressed, embedded, and comments removed.
+loose files not in the production directory are fully commented and uncompressed.
