@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Trevor" name="author">
+    <title>trevor256</title>
+
+<style>
+    body{
+      background: radial-gradient(circle, rgba(75,25,60,1) 30%, rgba(218,106,81,1) 70%, rgba(18,19,52,1) 95%);
+      font-family: sans-serif;
+      overflow-x:hidden;
+      padding: 5%;
+      margin: 0;
+      animation-duration: 3s;
+      animation-name: fadein;
+      background-repeat: no-repeat;
+    }
+    nav h1 {
+      float: left;
+      padding: 0px 0px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #aaa;
+    }
+    nav h2{
+      float: right;
+      text-decoration: none;
+      padding: 0px 11px;
+      font-size: 20px;
+      color: #f75;
+    }
+    nav h1:hover,nav h2:hover {
+      color: #aaf;
+    }
+
+    main{
+      width: 100%;
+      height: 100%;
+      margin-right: 0%;
+      float: left;
+      border-radius: 256px;
+      text-align: center;
+      color:#fff;
+    }
+    main h1{
+      color: #222;
+      font-size: 80px;
+      text-shadow:
+      1px 2px 4px #f66,
+      -1px -2px 4px #33f;
+    }
+    main p {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    input {
+      background-color: #222;
+      color: #fff;
+      width: 200px;
+      height: 30px;
+      border-radius: 10px;
+      border:  3px ridge ;
+      transition: .5s;
+      font-weight: bold;
+      padding-left: 20px;
+    }
+    input:focus {
+  width: 50%;
+}
+    @keyframes fadein {
+      from {
+        opacity: 0%;
+      }
+
+      to {
+        opacity:100%;
+      }
+    }
+
+    footer {
+      color: #fff3;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    @media screen and (min-width: 600px) {
+      nav h1, nav h2{
+        padding: 10px 14px;
+        font-size: 25px;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      nav h1, nav h2{
+        padding: 10px 20px;
+        font-size: 35px;
+      }
+    }
+    .post {
+      display: inline-block;
+      width: 90%;
+      height: 555px;
+      background: #222;
+      margin: 1%;
+      border-radius: 5px;
+    }
+
+</style>
+</head>
+<body>
+
+<!--navigation links-->
+<nav>
+ <a href="index.html"><h1>trevor256</h1></a>
+ <a href="https://www.artstation.com/trevor256" target="_blank"><h2>Art</h2></a>
+ <a href="https://www.youtube.com/channel/UC7U47K09nNH-KX7-v4bd-kw/videos" target="_blank"><h2>Videos</h2></a>
+  <a href="https://github.com/trevor256" target="_blank"><h2>Github</h2></a>
+</nav>
+
+    <main>
+      <h1>Hello</h1>
+      <p> trevor256.com is my portfolio site.<br/><i>scroll & search</i> posts</p>
+      <input type="text" placeholder="   Search.." name="search">
+      <footer> <p> &copy; 2020<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Trevor</p>
+</footer>
+
+ <div>
+   <% post.forEach(post => { %>
+     <div class="post">
+       <h3><%= post.title %></h3>
+       <%= post.createdAt.toLocaleDateString() %>
+       <div><%= post.description %></div>
+     </div>
+
+     <%})%>
+  </div>
+
+</main>
+  </body>
+</html>
