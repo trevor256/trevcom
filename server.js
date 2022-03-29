@@ -20,11 +20,6 @@ app.get('/', (req, res) => {
       createdAt: new Date(),
       description: 'test desc'
 
-    },
-    {
-      title: 'test post3',
-      createdAt: new Date(),
-      description: 'test desc'
     }]
   res.render('posts/index', { post: post})
 })
