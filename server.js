@@ -4,10 +4,9 @@ const postsRouter = require('./routes/posts')
 const app = express()
 
 mongoose.connect('mongodb://localhost/')
-
 app.set('view engine', 'ejs')
-
 app.use(express.urlencoded({ extended: false }))
+
 
 app.get('/', (req, res) => {
     const post = [{
@@ -24,7 +23,5 @@ app.get('/', (req, res) => {
   res.render('posts/index', { post: post})
 })
 
-
 app.use('/posts', postsRouter)
-
 app.listen(8080)
