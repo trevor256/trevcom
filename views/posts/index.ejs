@@ -8,12 +8,12 @@
 
 <style>
     body{
-      background: radial-gradient(circle, rgba(251,150,140,1) 40%, rgba(218,106,81,1) 70%, rgba(28,29,42,1) 95%);
+      background: radial-gradient(circle, rgba(130,100,150,1) 40%, rgba(218,106,81,1) 70%, rgba(28,29,42,1) 95%);
       font-family: sans-serif;
       overflow-x:hidden;
       padding: 5%;
       margin: 0;
-      animation-duration: 3s;
+      animation-duration: 2s;
       animation-name: fadein;
       background-repeat: no-repeat;
     }
@@ -40,7 +40,6 @@
       height: 100%;
       margin-right: 0%;
       float: left;
-      border-radius: 256px;
       text-align: center;
       color:#fff;
     }
@@ -48,12 +47,11 @@
       color: #222;
       font-size: 80px;
       text-shadow:
-      1px 2px 4px #f99,
-      -1px -2px 4px #12145F;
+      1px 2px 6px #f669,
+      -1px -2px 6px #1199;
     }
     main p {
       font-weight: bold;
-      font-size: 20px;
     }
     input {
       background-color: #222;
@@ -84,7 +82,15 @@
       text-align: center;
       font-size: 12px;
     }
-
+    .post {
+      display: inline-block;
+      width: 90%;
+      height: 555px;
+      background: #222;
+      margin: 1%;
+      border-radius: 6px;
+      padding: 2%;
+    }
     @media screen and (min-width: 600px) {
       nav h1, nav h2{
         padding: 10px 14px;
@@ -96,15 +102,15 @@
         padding: 10px 20px;
         font-size: 35px;
       }
+      main p{
+        font-size: 25px;
+      }
+      .post {
+        float: left;
+        width: 44%;
+      }
     }
-    .post {
-      display: inline-block;
-      width: 90%;
-      height: 555px;
-      background: #222;
-      margin: 1%;
-      border-radius: 5px;
-    }
+
 
 </style>
 </head>
