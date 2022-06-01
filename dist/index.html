@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Trevor" name="author">
+    <title>trevor256</title>
+
+<style>
+
+    body{
+      background: radial-gradient(circle, rgba(130,100,150,1) 40%, rgba(218,106,81,1) 70%, rgba(28,29,42,1) 95%);
+      font-family: sans-serif;
+      overflow-x:hidden;
+      padding: 5%;
+      margin: 0;
+      animation-duration: 2s;
+      animation-name: fadein;
+      background-repeat: no-repeat;
+      height:2000px;
+    }
+    nav h1 {
+      float: left;
+      padding: 0px 0px;
+      text-decoration: none;
+      font-size: 13px;
+      color: #f758;
+    }
+    nav h2{
+      float: right;
+      text-decoration: none;
+      padding: 0px 11px;
+      font-size: 13px;
+      color: #f758;
+    }
+    nav h1:hover,nav h2:hover {
+      color: #aaf;
+    }
+
+    main{
+      width: 100%;
+      height: 100%;
+      margin-right: 0%;
+      float: left;
+      text-align: center;
+      color:#fff;
+    }
+    main h1{
+      color: #222;
+      font-size: 80px;
+      text-shadow:
+      1px 2px 6px #f669,
+      -1px -2px 6px #1199;
+    }
+    main p {
+      font-weight: bold;
+    }
+    input {
+      background-color: #222;
+      color: #fff;
+      width: 200px;
+      height: 30px;
+      border-radius: 10px;
+      border:  3px ridge ;
+      transition: .5s;
+      font-weight: bold;
+      padding-left: 20px;
+    }
+    input:focus {
+  width: 50%;
+}
+    @keyframes fadein {
+      from {
+        opacity: 0%;
+      }
+
+      to {
+        opacity:100%;
+      }
+    }
+
+    footer p{
+      color: #fff7;
+      text-align: center;
+      font-size: 12px;
+    }
+    .post {
+      display: inline-block;
+      width: 90%;
+      height: 555px;
+      background: #222;
+      margin: 1%;
+      border-radius: 6px;
+      padding: 2%;
+    }
+    @media screen and (min-width: 600px) {
+      nav h1, nav h2{
+        padding: 10px 14px;
+        font-size: 17px;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      nav h1, nav h2{
+        padding: 10px 20px;
+        font-size: 30px;
+      }
+      main p{
+        font-size: 25px;
+      }
+      .post {
+        float: left;
+        width: 44%;
+      }
+    }
+
+</style>
+
+<link rel="preload" href="/trevor256-45d579b11df6e4d8_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/trevor256-45d579b11df6e4d8.js"></head>
+<body>
+<script type="module">import init from '/trevor256-45d579b11df6e4d8.js';init('/trevor256-45d579b11df6e4d8_bg.wasm');</script><script>(function () {
+    var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    var url = protocol + '//' + window.location.host + '/_trunk/ws';
+    var poll_interval = 5000;
+    var reload_upon_connect = () => {
+        window.setTimeout(
+            () => {
+                // when we successfully reconnect, we'll force a
+                // reload (since we presumably lost connection to
+                // trunk due to it being killed, so it will have
+                // rebuilt on restart)
+                var ws = new WebSocket(url);
+                ws.onopen = () => window.location.reload();
+                ws.onclose = reload_upon_connect;
+            },
+            poll_interval);
+    };
+
+    var ws = new WebSocket(url);
+    ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        if (msg.reload) {
+            window.location.reload();
+        }
+    };
+    ws.onclose = reload_upon_connect;
+})()
+</script></body></html>
