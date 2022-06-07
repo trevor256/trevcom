@@ -5,9 +5,9 @@
 
 ## Made With 
 
-Rust - a general-purpose programming language https://www.rust-lang.org/
+RUST - a general-purpose programming language https://www.rust-lang.org/
 
-Yew - Rust front-end framework https://yew.rs/ 
+YEW - front-end framework for Rust https://yew.rs/ 
 
 WASM - a binary format to compile languages to https://webassembly.org/
 
