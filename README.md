@@ -11,6 +11,8 @@ HTML - https://www.w3schools.com/html/html_intro.asp
 
 CSS - https://www.w3schools.com/css/css_intro.asp
 
-nodejs -
+nodejs - apt install posibly update repos
 
-express - 
+express - npm install express
+
+react - npm install react
