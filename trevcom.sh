@@ -1,7 +1,8 @@
 #!/bin/bash
 curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
 sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt-get install -y nodejs selinux-basics selinux-policy-default auditd
+sudo apt-get install -y nodejs
+# sudo apt-get install -y selinux-basics selinux-policy-default auditd
 # setsebool -P ssh_keysign 1
 # selinux-activate
 iptables -A INPUT -i lo -j ACCEPT

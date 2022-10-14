@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Trevor" name="author">
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>trevor256</title>
+
+<style>
+*{
+transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+    body{
+      background: radial-gradient(circle, rgba(40,70,100,1) 20%, rgba(248,106,81,1) 70%, rgba(28,29,40,1) 95%);
+      font-family: sans-serif;
+      overflow-x:hidden;
+      padding: 2%;
+      margin: 0;
+      animation-duration: 2s;
+      animation-name: fadein;
+      background-repeat: no-repeat;
+      height:100%;
+    }
+    nav h1 {
+      float: left;
+      padding: 0px 0px;
+      text-decoration: none;
+      font-size: 13px;
+      color: #eee8;
+    }
+    nav h2{
+      float: right;
+      text-decoration: none;
+      padding: 0px 11px;
+      font-size: 13px;
+    color: #eee8;
+    }
+    nav h1:hover,nav h2:hover {
+      color: #aaf;
+    }
+
+    main{
+      width: 100%;
+      height: 100%;
+      margin-right: 0%;
+      float: left;
+      text-align: center;
+      color:#fff;
+    }
+    main h1{
+      color: #fff;
+      font-size: 80px;
+      text-shadow:
+      1px 2px 6px #f669,
+      -1px -2px 6px #1199;
+    }
+    main p {
+      font-weight: bold;
+    }
+    input {
+      background-color: #222;
+      color: #fff;
+      width: 200px;
+      height: 30px;
+      border-radius: 10px;
+      border:  3px ridge ;
+      transition: .5s;
+      font-weight: bold;
+      padding-left: 20px;
+    }
+    input:focus {
+  width: 50%;
+}
+
+footer{
+  background-color: #2237;
+  width: 100%;
+      height: 156px;
+      margin-right: 0%;
+      float: left;
+      margin:0;
+      border-radius: 10px;
+      padding: 2%;
+}
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+img{
+  width: 100%;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 2px 3px 10px #0006;
+  }
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+span{
+  width: 100%;
+  z-index: 0;
+
+}
+
+    @keyframes fadein {
+      from {
+        opacity: 0%;
+      }
+
+      to {
+        opacity:100%;
+      }
+    }
+
+
+    .post {
+      display: inline-block;
+      width: 90%;
+      height: 555px;
+      background: #222;
+      margin: 1%;
+      border-radius: 6px;
+      padding: 2%;
+    }
+    @media screen and (min-width: 600px) {
+      nav h1, nav h2{
+        padding: 10px 14px;
+        font-size: 17px;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      nav h1, nav h2{
+        padding: 10px 20px;
+        font-size: 30px;
+      }
+      main p{
+        font-size: 25px;
+      }
+      .post {
+        float: left;
+        width: 44%;
+      }
+      .gallery{
+        margin:10%;
+        transform: translateY(-100px);
+
+}
+    }
+
+</style>
+</head>
+
+<nav>
+ <a href="https://trevor256.com"><h1>trevor256</h1></a>
+ <a href="https://www.youtube.com/channel/UC7U47K09nNH-KX7-v4bd-kw/videos" target="_blank"><h2>Videos</h2></a>
+ <a href="https://github.com/trevor256" target="_blank"><h2>Github</h2></a>
+ <a href="https://github.com/trevor256" target="_blank"><h2>Downloads</h2></a>
+</nav>
+
+    <main>
+      <div id="mydiv"></div>
+      <h2>Site is a work in progress, Please visit links for now</h2>
+    <script type="text/babel">
+      function Hello() {
+        return <h1>Hello</h1>;
+      }
+
+      ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+    </script>
+
+
+<!-- The four columns -->
+<div class="gallery">
+<div class="container">
+
+  <img src="Go.svg" id="expandedImg">
+  <div id="imgtext"></div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <img src="Go.svg" alt="Nature" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="test.png" alt="Snow" " onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="test.png" alt="Mountains" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="test.png" alt="Lights" onclick="myFunction(this);">
+  </div>
+</div>
+</div>
+
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+    </main>
+      <footer>
+      hello
+</footer>
+
+
+</html>
