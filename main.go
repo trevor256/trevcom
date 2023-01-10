@@ -4,18 +4,18 @@ import(
     "fmt"
     "log"
     "net/http"
+    "database/sql"
+    _ "github.com/go-sql-driver/mysql"
 )
 
-func formHandler(w http.ResponseWriter, r *http.Request){
-if err := r.ParseForm(); err != nil {
-    fmt.Fprintf(w, "ParseForm() err: %v", err)
-    return
+
+func datab() {
+    db, err := sql.Open("mysql", "root:<yourMySQLdatabasepassword>@tcp(127.0.0.1:3306)/test")
+    if err != nil {
+        panic(err.Error())
     }
-    fmt.Fprintf(w, "POST request successful")
-    name := r.FormValue("name")
-    address := r.FormValue("address")
-    fmt.Fprintf(w, "Name = %s\n", name)
-    fmt.Fprintf(w, "Address = %s\n", address)
+    defer db.Close()
+    fmt.Println("Success!")
 }
 
 func helloHandler(w http.ResponseWriter, r *http.Request){
@@ -32,11 +32,12 @@ fmt.Fprintf(w, "hello!")
 
 func main(){
     fileServer := http.FileServer(http.Dir("./public"))
+    datab()
     http.Handle("/", fileServer)
-    http.HandleFunc("/form", formHandler)
     http.HandleFunc("/hello", helloHandler)
+    
 
-    fmt.Printf("port 8080")
+    fmt.Printf("120.0.0.1:8080")
     if err := http.ListenAndServe(":8080", nil); err !=nil {
         log.Fatal(err)
 
