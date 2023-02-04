@@ -1,0 +1,2 @@
+npm install formidable //file uploads 
+npm install nodemailer // email stat
