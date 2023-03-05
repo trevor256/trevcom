@@ -6,7 +6,7 @@ const path = require('path');
 const port = process.argv[2] || 9000;
 
 http.createServer(function (req, res) {
-  console.log(`${req.method} ${req.url}`);
+  console.log(`${req.method} ${req.url}`); //remove on production
 
   // parse URL
   const parsedUrl = url.parse(req.url);
@@ -53,7 +53,6 @@ http.createServer(function (req, res) {
       }
     });
   });
-
 
 }).listen(parseInt(port));
 

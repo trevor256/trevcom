@@ -1,2 +1,2 @@
-npm install formidable //file uploads 
-npm install nodemailer // email stat
+npm i express.js express-fileupload
+npm install -g nodemon

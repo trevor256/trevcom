@@ -1,99 +1,165 @@
+/* grid items */
 .item1 { grid-area: nav; }
 .item2 { grid-area: main; }
-.item3 { grid-area: footer; }
+.item3 { grid-area: feed; }
+.item4 { grid-area: footer; }
 
-nav{
-  font-size: 9px;
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 1px;
-  color: #fff;
-  text-decoration: none;
-  text-align: right
-} 
+@font-face {
+  font-family: title;
+  src: url(theboldfont.ttf);
+}
+
 .grid-container{
-  background: radial-gradient(circle, rgba(248,106,81,1) 40%, rgba(28,29,40,1) 95%);
+  background: radial-gradient(circle, rgba(248,106,81,1) 40%, rgba(28,29,50,1) 95%);
   font-family: sans-serif;
   overflow-x:hidden;
-  padding: 1%;
   margin: 0;
   background-repeat: no-repeat;
-  transition: all 0.2s ease;
+  transition: all 1s ease;
   color: #fff;
-  text-decoration: none;
-  font-size: 13px;
   display: grid;
   grid-template-areas: 
-  'nav nav nav nav '
-  'main main main main'
-  'footer footer footer footer';
+  'nav'
+  'main'
+  'feed'
+  'footer';
+}
+
+nav{
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  z-index: 2;
+  top:0;
+  animation-duration: 1s;
+  animation-name: fadein;
+  grid-template-rows: 0px;
+  background-color: #2229;
+  height: 50px;
+  box-shadow: 0px 9px 19px #111;
+  
+
+} 
+.logo{
+  color: #fff;
+  font-family: "title";
 }
  main{
-      animation-duration: 1s;
+      animation-duration: 1.5s;
       animation-name: fadein;
-    }
-    main p {
-      font-weight: bold;
-    }
-    .grid{
       display: inline-grid;
-      grid-template-columns: 1fr 1fr ;
-      grid-template-rows: 300px 200px;
-      column-gap: 5px;
-      
+      grid-template-columns: 1fr  ;
+      text-align: center;
     }
-  
-  img{
+  .main-img{
+    width:100%;
+    box-shadow: 0px 9px 9px #f867;
+    align-content: center;
+    object-fit: none;
+    border-bottom-left-radius: 60% 30%;
+    border-bottom-right-radius: 60% 30%;
+    border-bottom: 3px solid #fff;
+  }
+ main h1{
+    text-shadow: 0px 2px 4px #000;
+    transform: translatey(-140px);
+    font-family: "title";
+  }
+
+div{
+     display: inline-grid;
+     grid-template-columns: 1fr ;
+     cursor: pointer;
+     align-content: center;
+     padding: 5%;
+     animation-duration: 3s;
+     animation-name: fadein;
+     transform: translateY(-90px);
+     
+  }
+  article{
+    display: inline-grid;
+    margin: 2%;
+    transform: translateY(-90px);
+  }
+  article h1{
+    font-family: "title";
+    transform: translateY(20px);
+    text-shadow: 0px 2px 4px #000;
+
+  }
+  article p{
+
+  }
+  .feed-img{
     width: 100%;
-    height: 300px;
-    border-radius: 5px;
-    opacity: 0.8;
-    cursor: pointer;
-    }
+    align-content: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 5px 9px #222;
+  
+  }
 footer{
       width: 100%;
       float: left;
       text-align: center;
-
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      background-color: #222;
+      box-shadow: 0px -5px 9px #222;
+}
+/* link styles*/
+a:link {
+  color: #fff;
+  text-decoration: none;
 }
 
-    @keyframes fadein {
-      from {
-        opacity: 0%;
-      }
-
-      to {
-        opacity:100%;
-      }
-    }
-
-    @media screen and (min-width: 600px) {
-      nav h1, nav h2{
-        padding: 10px 14px;
-        font-size: 17px;
-      }
-      .column {
-  float: left;
-  width: 33.3%;
-  padding: 10px;
-  box-sizing: border-box;
+a:visited {
+  color: #fff;
+  text-decoration: none;
 }
-    }
-    @media screen and (min-width: 1440px) {
-      nav h1, nav h2{
-        padding: 10px 20px;
-        font-size: 30px;
-      }
-      main p{
-        font-size: 25px;
-      }
-      .post {
-        float: left;
-        width: 44%;
-      }
-      .gallery{
-        margin:10%;
-        transform: translateY(-100px);
 
+a:hover {
+  transform: translateY(1px);
+  color: #ddf;
 }
-    }
+
+a:active {
+  color: #fff1;
+  transform: translateY(2px);
+}
+/* Animations */
+@keyframes color {
+  0%   {border-bottom: 5px solid #555;}
+  50%  {border-bottom: 5px solid #777;}
+  100% {border-bottom: 5px solid #555;}
+}
+@keyframes fadein {
+      from {opacity: 0%; 
+        transform: translateY(20px);}
+      to {opacity:100%;}
+ }
+
+/* Screen Sizes */
+@media screen and (min-width: 600px) {
+nav {font-size: 15px;
+  height: 50px;}
+}
+
+@media screen and (min-width: 1440px) {
+      nav{font-size: x-large;
+        height: 70px;}
+      main p{font-size: 25px;}
+      main h1{
+        transform: translateY(-280px);
+      }
+      div{
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        cursor: pointer;
+        align-content: center;
+        padding: 5%;
+     }
+  }
