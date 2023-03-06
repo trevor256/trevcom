@@ -60,7 +60,7 @@ nav{
     object-fit: none;
     border-bottom-left-radius: 60% 30%;
     border-bottom-right-radius: 60% 30%;
-    border-bottom: 3px solid #fff;
+    border-bottom: 4px solid #fff;
   }
  main h1{
     text-shadow: 0px 2px 4px #000;
@@ -91,7 +91,7 @@ div{
 
   }
   article p{
-
+font-size: 20px;
   }
   .feed-img{
     width: 100%;
@@ -106,7 +106,7 @@ footer{
       float: left;
       text-align: center;
       display: inline-grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr ;
       background-color: #222;
       box-shadow: 0px -5px 9px #222;
 }
@@ -163,3 +163,55 @@ nav {font-size: 15px;
         padding: 5%;
      }
   }
+
+  #upload{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    width: 70%; /* Full width */
+    height: 300px; /* Full height */
+    width: 500px;
+    padding: 20px;
+    color:#000;
+    background-color: #fffe; /* Black w/ opacity */
+    border-radius: 10px;
+    margin-left: 130%;
+    margin-right: auto;
+    float: left;
+    transform: translateY(200px);
+    align-content: center;
+    align-items: center;
+
+  }
+  label{
+    float: left;
+  }
+  input{
+    padding: 10px;
+    margin: 5px;
+    border-bottom: 3px solid #000;
+    float: left;
+  }
+  input[type=file]{
+    border: 3px solid #f00;
+    height: 20px;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #2a2;
+    color: white;
+    padding: 10px;
+    font-size: large;
+    margin: 5px;
+    border: none;
+    display: inline-grid;
+    cursor: pointer;
+    width: 100px;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    background-color: #f55;
+  }
+  

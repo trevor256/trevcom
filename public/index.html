@@ -8,7 +8,6 @@
     <title>trevor256</title>
 <!-- imports -->
     <link rel="stylesheet" href="style.css"> 
-    <script src="script.js"></script> 
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 
@@ -32,22 +31,22 @@
 <!-- feed -->
 <div class="item3">
   <article>
-    <h1>NEW:</h1>
+    <h1 id="new1"></h1>
     <img class="feed-img" src="/public/img/main.jpg" alt="Snow" onclick="myFunction(this);">
     <p>thsrthsrthsrt srt hsrth sth sth</p>
   </article>
   <article>
-    <h1>Most recent uploads</h1>
+    <h1 id="new2"></h1>
     <img class="feed-img" src="/public/img/main.jpg" alt="Snow" onclick="myFunction(this);">
     <p>thsrthsrthsrt srt hsrth sth sth</p>
   </article>
   <article>
-    <h1>Most recent uploads</h1>
+    <h1 id="new3"></h1>
     <img class="feed-img" src="/public/img/main.jpg" alt="Snow" onclick="myFunction(this);">
     <p>thsrthsrthsrt srt hsrth sth sth</p>
   </article>
   <article>
-    <h1>Most recent uploads</h1>
+    <h1 id="new2"></h1>
     <img class="feed-img" src="/public/img/main.jpg" alt="Snow" onclick="myFunction(this);">
     <p>thsrthsrthsrt srt hsrth sth sth</p>
   </article>
@@ -55,17 +54,57 @@
 
 <!-- footer -->
     <footer class="item4">
-      <a href="https://trevor256.com"><p id="footerspace">Home</p></a>
+   
       <a href="https://github.com/trevor256" target="_blank"><p>Videos</p></a>
         <a href="https://github.com/trevor256" target="_blank"><p>Github</p></a>
           <a href="https://trevor256.com"><p id="footerspace">Articals</p></a>
           <a href="https://trevor256.com"><p id="footerspace">Downloads</p></a>
-          <a href="https://trevor256.com"><p id="footerspace">login</p></a>
-          <a href="https://trevor256.com"><p id="footerspace">Contact</p></a>
+          <a href="https://trevor256.com"><p id="footerspace">Home</p></a>
+          <a onclick="document.getElementById('upload').style.display='grid'"><p>Upload</p></a>
+          <a href="https://trevor256.com"><p id="footerspace">Other</p></a>
           <a href="https://trevor256.com"><p id="footerspace"><small>&copy; Copyright 2023, Trevor</small></p></a>
           <a href="https://trevor256.com"><p id="footerspace">Contact</p></a>
-          <a href="https://trevor256.com"><p id="footerspace">Contact</p></a>
     </footer>
+
+  <script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (e) => {
+      
+      e.preventDefault();
+      // Prevents HTML handling submission
+      const name = document.getElementById("name");
+      const files = document.getElementById("files");
+      const formData = new FormData();
+      // Creates empty formData object
+      formData.append("name", name.value);
+      // Appends value of text input
+      for(let i =0; i < files.files.length; i++) {
+          formData.append("files", files.files[i]);
+      }
+      // Appends value(s) of file input
+      // Post data to Node and Express server:
+      fetch('http://127.0.0.1:5000/api', {
+          method: 'POST',
+          body: formData, // Payload is formData object
+      })
+      .then(res => res.json())
+      .then(data => console.log(data));
+  })
+  </script>
+  
+<div id="upload">
+  <form method="post">
+      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="text" name="file-name" placeholder="file-name" id="name" required>
+      <input type="file" name="file" id="files" multiple required>
+      <input type="text" name="file-name" placeholder="Title" id="name" required>
+      <input type="text" name="file-name" placeholder="Artical Contents...." id="name" required>
+
+      <button type="submit">upload</button>
+      <button type="button" onclick="document.getElementById('upload').style.display='none'" class="cancelbtn">Cancel</button>
+  </form>
+</div>
 
 </body>
 </html>
