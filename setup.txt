@@ -1,2 +1,0 @@
-npm i express.js multer cors
-npm install -g nodemon
